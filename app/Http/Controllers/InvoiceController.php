@@ -63,7 +63,7 @@ class InvoiceController extends Controller
                     'quantity'   => $itemData['quantity'],
                     'discount_percentage' => $discountPercentage,
                     'unit_price' => $product->price,
-                    'subtotal'   => $subtotal, // Keep original un-discounted subtotal
+                    'subtotal'   => $subtotal - $rowDiscount,
                 ]);
 
                 // Decrement product stock
